@@ -192,7 +192,7 @@ Open to suggestions and feedback! To contribute:
 
 ## 🧑‍🦱 Author
 
-[![GitHub](https://img.shields.io/badge/GitHub_RudraXi-%23121011.svg?logo=github&logoColor=white)](https://github.com/rudra-xi)
+[![GitHub](https://img.shields.io/badge/GitHub_rudraxi-%23121011.svg?logo=github&logoColor=white)](https://github.com/rudra-xi)
 
 ## 📱Contact
 
