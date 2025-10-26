@@ -1,26 +1,65 @@
 @import "tailwindcss";
 
+/* Global CSS Variables: Color Palette & Fonts */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+    --adelia: "adelia";
+    --brunson: "brunson";
+    --background: hsl(67, 6%, 74%);
+    --text: hsl(176, 76%, 18%);
+    --accent: hsl(33, 100%, 47%);
 }
 
+/* Custom Theme Definition */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+    --font-main: var(--brunson);
+    --font-cursive: var(--adelia);
+    --color-background: var(--background);
+    --color-text: var(--text);
+    --color-accent: var(--accent);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* Base Document Styles */
+html,
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+    font-family: var(--font-main);
+    background: var(--background);
+    color: var(--text);
+    cursor: none;
+    scroll-behavior: auto !important;
+}
+
+/* Custom WebKit Scrollbar */
+::-webkit-scrollbar {
+    width: 3px;
+}
+::-webkit-scrollbar-thumb {
+    background: var(--accent);
+}
+::-webkit-scrollbar-button {
+    display: none;
+}
+
+/* Centering utility */
+@utility flex-center {
+    @apply flex items-center justify-center;
+}
+
+/* Base transition utility */
+@utility base-ease {
+    @apply transition-all duration-300 ease-in-out;
+}
+@utility page-padding {
+    @apply pt-8 px-12;
+}
+
+/*
+  Page Reveal Animation Components
+  - .banner-top and .banner-bottom are used to create a "curtain" effect
+    for page transitions. They cover the screen and then reveal the content.
+*/
+.banner-top {
+    @apply bg-text min-h-1/2 z-50 fixed top-0 w-1/4 text-background text-4xl text-center;
+}
+.banner-bottom {
+    @apply bg-text min-h-1/2 z-50 fixed bottom-0 w-1/4 text-background text-4xl text-center;
 }
